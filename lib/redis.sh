@@ -1,0 +1,1 @@
+alias red='redis-server /Users/pjkelly/Developer/etc/redis.conf'
