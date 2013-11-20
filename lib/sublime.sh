@@ -1,0 +1,1 @@
+alias subl='subl3'
