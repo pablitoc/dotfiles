@@ -2,6 +2,7 @@ export EDITOR="subl3 --wait --new-window"
 export VISUAL="subl3 --wait --new-window"
 
 # Ansible Variables
+export ANSIBLE_CONFIG="$BOXEN_SRC_DIR/playbooks/ansible.cfg"
 export ANSIBLE_SSH_ARGS="-o ForwardAgent=yes"
 export ANSIBLE_HOSTS="$BOXEN_SRC_DIR/playbooks/hosts"
 export ANSIBLE_ROLES_PATH="/etc/ansible/roles:$BOXEN_SRC_DIR/playbooks/roles"
