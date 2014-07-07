@@ -11,6 +11,7 @@ alias gplom='git pull origin master'
 alias gl='git log'
 
 alias gs='git status'
+alias gf='git fetch'
 
 alias ga='git add'
 
