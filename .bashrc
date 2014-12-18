@@ -5,12 +5,16 @@ export VISUAL="subl3 --wait --new-window"
 export ANSIBLE_CONFIG="$BOXEN_SRC_DIR/playbooks/ansible.cfg"
 export ANSIBLE_SSH_ARGS="-o ForwardAgent=yes"
 export ANSIBLE_HOSTS="$BOXEN_SRC_DIR/playbooks/hosts"
-export ANSIBLE_ROLES_PATH="/etc/ansible/roles:$BOXEN_SRC_DIR/playbooks/roles"
+export ROLES_PATH="/etc/ansible/roles:$BOXEN_SRC_DIR/playbooks/roles"
 export ANSIBLE_MODULE_PATH="$BOXEN_SRC_DIR/ansible/library/"
 export ANSIBLE_LIBRARY="/Users/pabz/src/ansible/library:/usr/share/ansible/"
 export ANSIBLE_HOME="$BOXEN_SRC_DIR/ansible"
 export PYTHONPATH="/Users/pabz/src/ansible/lib:$PATH"
 export PATH="/Users/pabz/src/ansible/bin:$PATH"
+
+# Android SDK Variables
+export PATH="$HOME/Android/sdk/tools:$PATH"
+export PATH="$HOME/Android/sdk/platform-tools:$PATH"
 
 # Get the aliases and functions
 if [ -f $(brew --prefix)/etc/bash_completion ]; then

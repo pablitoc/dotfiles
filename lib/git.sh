@@ -27,6 +27,7 @@ alias gcods='git checkout deploy/stage'
 
 alias gb='git branch'
 alias gr='git rm'
+alias gclean='git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d'
 
 grao () {
   git remote add origin git@github.com:crushlovely/$1.git
