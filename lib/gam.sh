@@ -1,1 +1,1 @@
-alias gam="python ~/gam/gam.py"
+alias gam="python ~/my/GAM/src/gam.py"
