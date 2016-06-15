@@ -23,12 +23,18 @@ export BOTO_CONFIG="~/.boto"
 complete -C aws_completer aws
 
 # Get the aliases and functions
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
+if [ -f $(brew --prefix)/etc/bash_completion.d/git-completion.bash ]; then
+  . $(brew --prefix)/etc/bash_completion.d/git-completion.bash
+fi
+
+if [ -f $(brew --prefix)/etc/bash_completion.d/git-prompt.sh ]; then
+  . $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
 fi
 
 # Pyenv Config
-eval "$(pyenv init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 __git_repo () {
   local g="$(__gitdir)"
