@@ -1,26 +1,19 @@
-export EDITOR="subl3 --wait --new-window"
-export VISUAL="subl3 --wait --new-window"
-
-# Ansible Variables
-export ANSIBLE_CONFIG="./ansible/ansible.cfg"
-export ANSIBLE_SSH_ARGS="-o ForwardAgent=yes"
-export ANSIBLE_HOSTS="$BOXEN_SRC_DIR/playbooks/hosts"
-export ROLES_PATH="./ansible/roles"
-export ANSIBLE_MODULE_PATH="$BOXEN_SRC_DIR/ansible/library/"
-export ANSIBLE_LIBRARY="/Users/pabz/src/ansible/library:/usr/share/ansible/"
-export ANSIBLE_HOME="$BOXEN_SRC_DIR/ansible"
-export PYTHONPATH="$BOXEN_SRC_DIR/ansible/lib:$PATH"
-export PATH="/Users/pabz/src/ansible/bin:$PATH"
+export EDITOR="atom --wait --new-window"
+export VISUAL="atom --wait --new-window"
 
 # Android SDK Variables
 export PATH="$HOME/Android/sdk/tools:$PATH"
 export PATH="$HOME/Android/sdk/platform-tools:$PATH"
 
 # AWS & BOTO
-# export AWS_DEFAULT_PROFILE=crush
-export BOTO_CONFIG="~/.boto"
-# export EC2_INI_PATH="~/src/ansible_roles/ansible-keys/inventory/ec2.ini"
+export BOTO_CONFIG="~/.aws/config"
 complete -C aws_completer aws
+
+#Postgres
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+
+# Swapping from PHP 5.5 to PHP 5.6
+export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 
 # Get the aliases and functions
 if [ -f $(brew --prefix)/etc/bash_completion.d/git-completion.bash ]; then
@@ -31,11 +24,7 @@ if [ -f $(brew --prefix)/etc/bash_completion.d/git-prompt.sh ]; then
   . $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
 fi
 
-# Pyenv Config
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
+# Terminal location Functions
 __git_repo () {
   local g="$(__gitdir)"
   local repo_dir=""
@@ -57,3 +46,22 @@ for script in $BOXEN_SRC_DIR/dotfiles/lib/*.sh ; do
     . $script
   fi
 done
+
+# Papertrail Config
+
+
+
+# Ansible Custom Config
+  export ANSIBLE_HOME="$BOXEN_SRC_DIR/ansible"
+  export PATH="$BOXEN_SRC_DIR/ansible/bin:$PATH"
+  export ANSIBLE_LIBRARY="$ANSIBLE_HOME/lib/ansible/modules/core/:$ANSIBLE_HOME/lib/ansible/modules/extras/"
+  export ANSIBLE_MODULE_PATH="$ANSIBLE_HOME/library/"
+  export ANSIBLE_CUSTOM_HOME="~/my/ansible"
+  export ANSIBLE_CONFIG="$ANSIBLE_CUSTOM_HOME/ansible.cfg"
+  export MANPATH="$MANPATH$ANSIBLE_HOME/docs/man:"
+  export PYTHONPATH="$BOXEN_SRC_DIR/ansible/lib"
+  # Pyenv requires reload
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+  pyenv rehash

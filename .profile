@@ -22,11 +22,6 @@ export PATH=$PATH:$EC2_HOME/bin
 ## VMware OVFTool Path
 export PATH="/Applications/VMware OVF Tool:$PATH"
 
-## Github API Token
-# export GITHUB_API_TOKEN=877fddcb0ed201f9c583522f1948bc854af0fbd2
-export GITHUB_TOKEN=47fc0d04f5f809347cf5bee66020819a652939c8
-
-## Docker Start Terminal
-eval "$(docker-machine env default)"
+# LC_ALL=en_US.UTF-8
 
 source ~/.bashrc
