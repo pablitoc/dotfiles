@@ -23,5 +23,7 @@ export PATH=$PATH:$EC2_HOME/bin
 export PATH="/Applications/VMware OVF Tool:$PATH"
 
 # LC_ALL=en_US.UTF-8
+## New Token Created 03/14/17
+export GITHUB_API_TOKEN=
 
 source ~/.bashrc
