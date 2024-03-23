@@ -1,4 +1,4 @@
-# PJ Kelly's Dotfiles
+# Dotfiles
 
 ## Installation
 
